@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传文件</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <style>
+        .form_item{
+            border: 1px solid #e5e5e5;
+            border-radius: 3px;
+        }
+        .btn{
+            height: 35px;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: all 0.1s ease;
+            font-size: 16px;
+
+            /*float: left;*/
+            /*margin-right: 36px;*/
+            min-width: 92px;
+            padding: 0 18px;
+            display: inline-block;
+            background: #1aa5d9;
+            color: #ffffff;
+        }
+        .btn:hover{
+            opacity: 0.85;
+        }
+        .btn:active{
+            transform: scale(0.95);
+        }
+        .sure,.upload_income{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form_item">
+    <p>在此上传项目研发项目表</p>
+    <input type="file" multiple id="file">
+    <div class="sure btn">确定上传</div>
+</div>
+
+<div class="form_item">
+    <P>请上传收入明细表:</P>
+    <input type="file" id="incomedetails">
+    <div class="upload_income btn">上传收入明细</div>
+</div>
+
+
+<div class="form_item">
+    <P>请上传正确的研发时间周期表:</P>
+    <input type="file" id="study_time">
+    <div class="upload_study_time btn">上传研发周期表</div>
+</div>
+
+
+
+</body>
+</html>
+<script>
+    window.onload=function () {
+        $(".sure").on("click",function () {
+            var file=$("#file")[0].files;
+            var data=new FormData();
+
+            for(var i=0;i<file.length;i++){
+                data.append('file',file[i]);
+            }
+
+            $.ajax({
+                url:"http://127.0.0.1/file/files",
+                type:"post",
+                data:data,
+                cache : false,// 上传文件无需缓存
+                processData : false,// 用于对data参数进行序列化处理 这里必须false
+                contentType : false, // 必须
+                success:function (res) {
+                    console.log(res.text);
+                    console.log(1);
+                }
+            })
+        })
+        $(".upload_income").on("click",function () {
+            var file=$("#incomedetails")[0].files[0];
+            var data=new FormData();
+            data.append("file",file);
+            $.ajax({
+                url:"http://127.0.0.1/file/incomdetails",
+                type:"post",
+                data:data,
+                cache : false,// 上传文件无需缓存
+                processData : false,// 用于对data参数进行序列化处理 这里必须false
+                contentType : false, // 必须
+                success:function (res) {
+                    console.log(res);
+                }
+            })
+
+        })
+
+        $(".upload_study_time").on("click",function () {
+            var file=$("#study_time")[0].files[0];
+            var data=new FormData();
+            data.append("file",file);
+            $.ajax({
+                url:"http://127.0.0.1/file/getStudyTime",
+                type:"post",
+                data:data,
+                cache : false,// 上传文件无需缓存
+                processData : false,// 用于对data参数进行序列化处理 这里必须false
+                contentType : false, // 必须
+                success:function (res) {
+                    console.log(res);
+                }
+            })
+
+        })
+
+
+
+
+
+    }
+</script>

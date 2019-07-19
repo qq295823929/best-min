@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取详情</title>
+    <link rel="stylesheet" href="js/layui/css/layui.css">
+    <link rel="stylesheet" href="css/details.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/layui/layui.js"></script>
+    <script src="js/details.js"></script>
+</head>
+<body>
+<div class="box">
+    <div class="top-form">
+        <div class="top-form-item">
+            <span>输入项目编号:</span><input type="text" id="project_keyword">
+        </div>
+        <div class="top-form-item">
+            <div class="layui-btn layui-btn-primary search">查询</div>
+        </div>
+    </div>
+    <div class="project_lists">
+        <div class="project_list">
+            <span>rd15</span>
+            <p>一种</p>
+        </div>
+    </div>
+    <div class="details-content">
+        <div class="details-item-2">
+            <div class="item-name">项目名称:</div>
+            <div class="item_con"><p id="project_name"></p></div>
+        </div>
+        <div class="details-item-2">
+            <div class="item-name">项目编号:</div>
+            <div class="item_con"><p id="project_num"></p></div>
+        </div>
+        <div class="details-item-2">
+            <div class="item-name">起止时间:</div>
+            <div class="item_con"><p id="project_time"></p></div>
+        </div>
+        <div class="details-item-2">
+            <div class="item-name">技术领域:</div>
+            <div class="item_con"><p id="project-area"></p></div>
+        </div>
+        <div class="details-item-2">
+            <div class="item-name">技术陵园:</div>
+            <div class="item_con"><p id="origin"></p></div>
+        </div>
+        <div class="details-item-2">
+            <div class="item-name">本项目研发人员数:</div>
+            <div class="item_con"><p id="study_person"></p></div>
+        </div>
+        <div class="details-item-3">
+            <div class="item-name">研发经费总预算:</div>
+            <div class="item_con"><p id="study_cost"></p></div>
+        </div>
+        <div class="details-item-3">
+            <div class="item-name">研发经费近三年总支出(万元):</div>
+            <div class="item_con"><p id="spend_of_three"></p></div>
+        </div>
+        <div class="details-item-3">
+            <div class="item-name">其中:</div>
+            <div class="item_con">
+                <div class="item_tip"><span>第一年:</span><span id="spend_details1"></span></div>
+                <div class="item_tip"><span>第二年:</span><span id="spend_details2"></span></div>
+                <div class="item_tip"><span>第三年:</span><span id="spend_details3"></span></div>
+            </div>
+        </div>
+        <div class="details-item">
+            <div class="item-name">立项目的及组织实施方式</div>
+            <div class="item_con"><p id="project_purpose"></p></div>
+        </div>
+        <div class="details-item">
+            <div class="item-name">核心技术及创新点</div>
+            <div class="item_con"><p id="main_point"></p></div>
+        </div>
+        <div class="details-item">
+            <div class="item-name">取得的阶段性成果</div>
+            <div class="item_con"><p id="project_result"></p></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+</script>
